@@ -2,6 +2,7 @@
 <html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
+    <!-- 🎯 全載具核心天線：確保行動裝置與 A4 紙張列印排版 100% 完美自適應 -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Bobby English: Advance C1 — 青少年觀點表達與結構寫作班 | 私立巴比美語短期補習班</title>
     
@@ -47,25 +48,21 @@
             overflow: hidden;
         }
 
-        /* 🎯 頁面邊界精準保護，確保 A4 範圍內 100% 契合 */
+        /* 🎯 螢幕瀏覽彈性自適應，徹底解決內容隱藏問題！ */
         .page { 
             position: relative;
             background: #fff;
-            padding: 30px 35px 12px 35px;
-            overflow: hidden;
+            padding: 30px 35px 20px 35px;
+            overflow: visible; /* 螢幕瀏覽時允許自然延伸 */
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            min-height: 1050px;
-            max-height: 1060px;
+            min-height: 980px; /* 改為彈性最小高度 */
             border-bottom: 2px dashed #e2e8f0;
-            page-break-after: always;
-            page-break-inside: avoid;
         }
 
         .page:last-child {
             border-bottom: none;
-            page-break-after: avoid;
         }
 
         .page-content {
@@ -85,7 +82,7 @@
             padding: 18px 24px;
             border-radius: 10px;
             border-bottom: 4.5px solid var(--uci-gold);
-            min-height: 135px;
+            min-height: 140px;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
         }
 
@@ -106,31 +103,28 @@
             display: block;
             line-height: 1.25;
             color: #ffffff;
-            margin: 0 0 4px 0;
+            margin: 0 0 6px 0;
             padding: 0;
             text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
-        }
-        
-        .title-group h1 span.en-main-title b {
-            font-size: 20px;
+            font-size: 19.5px;
             font-weight: 800;
-            letter-spacing: 0.4px;
         }
 
         .title-group h1 span.en-main-title span.zh-title-tag {
-            font-size: 15.5px;
-            font-weight: 700;
-            color: #ffffff;
+            font-size: 15px;
+            font-weight: 500;
+            color: #e2e8f0;
             margin-left: 4px;
         }
 
+        /* 🎯 標題第二行微調向下居中 */
         .title-group h1 span.zh-sub-title {
             display: block;
-            font-size: 15px;
+            font-size: 15.5px;
             font-weight: 700;
-            line-height: 1.25;
+            line-height: 1.35;
             color: var(--uci-gold);
-            margin: 0 0 6px 0;
+            margin: 6px 0 8px 0;
             padding: 0;
             text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
             white-space: nowrap;
@@ -179,7 +173,7 @@
             justify-content: space-between;
         }
 
-        /* 📜 動態捲動卡片樣式與精美微型滾動條 */
+        /* 📜 動態捲動卡片樣式 */
         .description-scroll-box {
             background-color: var(--card-bg);
             border: 1px solid var(--border-color);
@@ -208,20 +202,9 @@
             background: #0077b6;
         }
 
-        .scroll-tip-badge {
-            font-size: 10.5px;
-            color: #64748b;
-            font-weight: 500;
-            float: right;
-            background: #e2e8f0;
-            padding: 2px 8px;
-            border-radius: 10px;
-            margin-top: -2px;
-        }
-
         /* 🎯 中英文字體分離與層級對比樣式 */
         p.paragraph-desc {
-            font-size: 13px; /* 中文字級清晰易讀 */
+            font-size: 13.5px; /* 中文字級清晰易讀 */
             font-weight: 500;
             margin: 0 0 8px 0;
             text-align: justify;
@@ -263,41 +246,54 @@
             font-weight: 700;
         }
 
-        .pyp-badge p span.en-pyp-sub {
-            font-size: 11px;
-            font-weight: 400;
-            color: #64748b;
-            display: block;
-            margin-top: 2px;
+        /* 🎯 避孤晶片：確保標語與單詞最後關鍵詞不單獨換行成單字 */
+        .no-orphan {
+            display: inline-block;
+            white-space: nowrap;
         }
 
-        /* 🎯 表格容器保護，防止超出頁面 */
+        /* 🛡️ 核心表格全邊框防線：外框與內部單元格完整顯示 */
         .table-container {
             width: 100%;
             margin-top: 8px;
             margin-bottom: 10px;
-            page-break-inside: avoid;
         }
 
         table.ad-table { 
             width: 100%; 
-            border-collapse: collapse; 
-            font-size: 12.5px;
-            table-layout: fixed;
+            border-collapse: separate; /* 改為 separate 以完整呈現整體外框 */
+            border-spacing: 0;
+            font-size: 12px;
+            table-layout: fixed; /* 嚴格固定欄位寬度，防溢出！ */
             word-wrap: break-word;
-            border: 1px solid var(--border-color);
+            border: 1px solid var(--border-color) !important; /* 強制整體外框顯影 */
             border-radius: 6px;
             overflow: hidden;
-            page-break-inside: avoid;
         }
 
+        /* 明確設定內部格線與邊界 */
         table.ad-table th, table.ad-table td { 
-            border: 1px solid var(--border-color); 
-            padding: 8px 12px; 
+            border-right: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            padding: 9px 12px; 
             vertical-align: middle; 
             text-align: left; 
             line-height: 1.5;
             word-break: break-word;
+        }
+
+        /* 🎯 第二欄章節專屬對齊優化：微調內距，讓章節內容向左微移、精準居中不壓右線！ */
+        table.ad-table td.col-chapter {
+            text-align: center !important;
+            padding: 8px 4px !important;
+        }
+
+        /* 消除最右側與最底部的重複邊框 */
+        table.ad-table th:last-child, table.ad-table td:last-child {
+            border-right: none;
+        }
+        table.ad-table tr:last-child td {
+            border-bottom: none;
         }
 
         table.ad-table th { 
@@ -310,7 +306,7 @@
 
         .center-text { text-align: center !important; font-weight: 700; color: var(--uci-blue); }
         .left-align { text-align: left !important; }
-        
+
         ul.list-style { padding-left: 18px; margin-bottom: 6px; margin-top: 4px; }
         ul.list-style li { margin-bottom: 8px; font-size: 13px; color: var(--text-main); line-height: 1.55; text-align: justify; word-break: break-word; }
 
@@ -321,7 +317,6 @@
             border-radius: 6px;
             margin-top: 6px;
             margin-bottom: 10px;
-            page-break-inside: avoid;
         }
 
         .note { 
@@ -362,7 +357,7 @@
 
         .note-textarea-6lines {
             width: 100%;
-            height: 140px; /* 微調筆記區域高度，給下方圖檔留足安全空間 */
+            height: 140px;
             border: none;
             background: transparent;
             background-image: repeating-linear-gradient(
@@ -380,22 +375,21 @@
             font-family: inherit;
         }
 
-        /* 🎯 頁尾圖片容器與高度嚴格鎖定 (防止推擠溢頁) */
+        /* 🖼️ 頁 1 與頁 2 頁尾圖檔容器 */
         .footer-image-box {
-            width: calc(100% + 70px); 
-            margin-left: -35px; 
-            margin-top: 6px;
+            width: calc(100% + 80px);
+            margin-left: -40px; 
+            margin-top: 8px;
             overflow: hidden;
             display: flex;
             justify-content: center;
             align-items: flex-end;
-            page-break-inside: avoid;
         }
 
         .page-footer-img {
-            width: auto;
-            max-width: 96%; 
-            max-height: 130px; /* 精準控制高度，確保 100% 不會卡出頁面邊界 */
+            width: 100%; 
+            max-width: 100%; 
+            max-height: 145px; 
             object-fit: contain;
             display: block;
             margin: 0 auto;
@@ -403,14 +397,14 @@
             border: none;
         }
 
+        /* 🎯 核心修復：第三頁專屬頁尾容器精準居中，取消偏左推擠負邊距 */
         .last-page-footer-box {
-            width: calc(100% + 70px);
-            margin-left: -35px;
-            margin-top: 6px;
+            width: 100%;
+            margin: 8px auto 0 auto;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: flex-end;
+            justify-content: center;
             gap: 10px; 
             page-break-inside: avoid;
         }
@@ -418,6 +412,7 @@
         .join-us-btn-container {
             text-align: center;
             width: 100%;
+            margin-bottom: 4px;
         }
 
         /* 🎯 按鈕圖檔尺寸最佳化 */
@@ -437,7 +432,7 @@
             filter: drop-shadow(0 5px 10px rgba(0,0,0,0.2));
         }
 
-        /* 🖨️ 列印防護：進行 A4 紙張列印時自動展開全文字與圖檔安全邊界 */
+        /* 🖨️ 列印專用防護罩：只有在「真正列印紙張」時才精準鎖定 A4 尺寸！ */
         @media print {
             body { background-color: #fff; padding: 0; margin: 0; }
             .ad-container { max-width: 100%; width: 100%; box-shadow: none; border-radius: 0; }
@@ -451,34 +446,30 @@
                 padding: 15mm 18mm 0 18mm !important; 
                 margin: 0;
                 border-bottom: none;
-                overflow: hidden;
+                overflow: hidden !important; /* 列印時鎖定邊界 */
             }
             .page:last-child { page-break-after: avoid; }
             .description-scroll-box { max-height: none !important; overflow-y: visible !important; border: none !important; padding: 0 !important; }
-            .scroll-tip-badge { display: none !important; }
             .header-flex-box { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            table.ad-table th, table.ad-table td { 
+                border: 1px solid var(--border-color) !important; 
+                -webkit-print-color-adjust: exact; 
+                print-color-adjust: exact; 
+            }
             table.ad-table th { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
             .footer-image-box { width: calc(100% + 36mm) !important; margin-left: -18mm !important; }
-            .last-page-footer-box { width: calc(100% + 36mm) !important; margin-left: -18mm !important; }
-            .page-footer-img { max-height: 120px !important; }
+            .last-page-footer-box { width: 100% !important; margin: 0 auto !important; }
+            .page-footer-img { max-height: 130px !important; }
             .join-us-btn-container { display: none !important; }
-            .note-textarea-6lines {
-                border: none;
-                background-image: repeating-linear-gradient(
-                    transparent,
-                    transparent 27px,
-                    #94a3b8 27px,
-                    #94a3b8 28px
-                ) !important;
-                -webkit-print-color-adjust: exact;
-                print-color-adjust: exact;
+            table.ad-table, .info-card, .footer-image-box, .last-page-footer-box {
+                page-break-inside: avoid;
             }
         }
 
         @media (max-width: 768px) {
             body { padding: 0; }
             .ad-container { border-radius: 0; box-shadow: none; }
-            .page { padding: 20px 15px 0 15px; min-height: auto; max-height: none; }
+            .page { padding: 20px 15px 15px 15px; min-height: auto; }
             .header-flex-box { padding: 15px 18px; flex-direction: column-reverse; text-align: center; }
             .title-group { text-align: center; width: 100%; }
             .logo-img { max-width: 110px; margin-bottom: 8px; }
@@ -487,8 +478,8 @@
             table.ad-table td { min-width: 160px; }
             table.ad-table th { min-width: 95px; }
             .footer-image-box { width: calc(100% + 30px); margin-left: -15px; }
-            .last-page-footer-box { width: calc(100% + 30px); margin-left: -15px; }
-            .page-footer-img { max-height: 110px; }
+            .last-page-footer-box { width: 100%; margin: 0 auto; }
+            .page-footer-img { max-height: 120px; }
         }
     </style>
 </head>
@@ -512,10 +503,10 @@
 
             <h2 class="section-heading">💡 教學理念：關於現階段的英語思維 | Educational Philosophy</h2>
             
+            <!-- 📜 動態捲動卡片區塊（已移除提示文字標籤） -->
             <div class="description-scroll-box">
-                <span class="scroll-tip-badge">📜 滾動滑鼠或上下滑動閱讀 (Scroll)</span>
                 <p class="paragraph-desc" style="font-size: 13.5px; color: var(--uci-blue); font-weight: 700; margin-bottom: 6px;">
-                    【將語言實力轉化為深刻的觀點表達】
+                    【將語言實力轉化為深刻的<span class="no-orphan">觀點表達】</span>
                     <span style="font-size: 11px; color: var(--text-sub); font-weight: 400; display: block; margin-top: 2px;">[Turning Language Skills into Meaningful, Well-Expressed Viewpoints]</span>
                 </p>
                 <p class="paragraph-desc">
@@ -530,15 +521,15 @@
             <h2 class="section-heading" style="margin-top: 8px;">🌐 什麼是 IBDP 國際文憑先修？它如何幫助孩子？ | What is IBDP & How Does It Help?</h2>
             <div class="info-card">
                 <p class="paragraph-desc" style="margin-bottom: 4px;">
-                    許多家長常問：為什麼我們要在國三這個階段，帶入 <strong>IBDP（國際文憑課程）</strong> 的元素？IBDP 是全球頂尖大學（如哈佛、牛津、台大、清大）高度認可的菁英學制。它不考死記硬背的選擇題，而是要求學生針對全球議題進行深度閱讀，並寫出具備個人觀點的論述。提早接觸這套學制，將帶給孩子四大核心優勢：
+                    許多家長常問：為什麼我們要在國三這個階段，帶入 <strong>IBDP（國際文憑課程）</strong> 的元素？IBDP 是全球頂尖大學（如哈佛、牛津、台大、清大）高度認可的菁英學制。它不考死記硬背的選擇題，而是要求學生針對全球議題進行深度閱讀，並寫出具備個人觀點的論述。提早接觸這套學制，將帶給孩子四大<span class="no-orphan">核心優勢：</span>
                 </p>
                 <span class="light-en-text">IBDP is an elite educational framework recognized by top universities worldwide. Instead of rote memorization, it requires students to read deeply and articulate independent viewpoints. Early exposure to this framework grants students four core advantages:</span>
                 
                 <ul class="list-style" style="margin-bottom: 0; margin-top: 6px;">
-                    <li><strong>1. 超前演練高中「學習歷程檔案」：</strong>提前適應台灣高中 108 課綱最重視的「探究與實作」與小論文撰寫邏輯。<br><span class="eng-text">High School Portfolio Readiness: Early training for the "Inquiry and Practice" projects and micro-essays highly valued in Taiwan's high school curriculum.</span></li>
-                    <li><strong>2. 輕鬆駕馭高中英文長難句：</strong>高中英文的長度與廣度是國中的數倍，接觸學術文本能讓孩子上高中後「降維打擊」校內課業。<br><span class="eng-text">Effortless Transition to High School English: Academic texts prepare students to comfortably handle the vast expansion of reading volume in high school.</span></li>
-                    <li><strong>3. 鍛鍊個人申請的面試表達力：</strong>在 10 人小班中引導孩子針對議題進行「有邏輯的英文辯證」，培養未來甄選面試的從容自信。<br><span class="eng-text">Polishing Interview & Presentation Skills: Guided logical discussions in a small group build confidence and articulation for future school interviews.</span></li>
-                    <li><strong>4. 奠定國際檢定（托福/雅思）實力：</strong>文本的廣度涵蓋科學與人文，為未來有出國規劃或頂尖大學外文檢定門檻做最紮實的準備。<br><span class="eng-text">Solid Foundation for TOEFL/IELTS: Broad content covering sciences and humanities thoroughly prepares students for future international proficiency exams.</span></li>
+                    <li><strong>1. 超前演練高中「學習歷程檔案」：</strong>提前適應台灣高中 108 課綱最重視的「探究與實作」與小論文<span class="no-orphan">撰寫邏輯。</span><br><span class="eng-text">High School Portfolio Readiness: Early training for the "Inquiry and Practice" projects and micro-essays highly valued in Taiwan's high school curriculum.</span></li>
+                    <li><strong>2. 輕鬆駕馭高中英文長難句：</strong>高中英文的長度與廣度是國中的數倍，接觸學術文本能讓孩子上高中後「降維打擊」<span class="no-orphan">校內課業。</span><br><span class="eng-text">Effortless Transition to High School English: Academic texts prepare students to comfortably handle the vast expansion of reading volume in high school.</span></li>
+                    <li><strong>3. 鍛鍊個人申請的面試表達力：</strong>在 10 人小班中引導孩子針對議題進行「有邏輯的英文辯證」，培養未來甄選面試的<span class="no-orphan">從容自信。</span><br><span class="eng-text">Polishing Interview & Presentation Skills: Guided logical discussions in a small group build confidence and articulation for future school interviews.</span></li>
+                    <li><strong>4. 奠定國際檢定（托福/雅思）實力：</strong>文本的廣度涵蓋科學與人文，為未來有出國規劃或頂尖大學外文檢定門檻做最<span class="no-orphan">紮實的準備。</span><br><span class="eng-text">Solid Foundation for TOEFL/IELTS: Broad content covering sciences and humanities thoroughly prepares students for future international proficiency exams.</span></li>
                 </ul>
             </div>
         </div>
@@ -564,10 +555,10 @@
                         <tr>
                             <td class="center-text">🟢 Pillar 1<br>國際視野五大主題先修<br><span class="note">聽說讀寫綜合研討</span></td>
                             <td>
-                                <strong>「走進全球議題，鍛鍊多角度的文字表達」</strong> <span class="note">"Engaging with global themes, honing multi-perspective textual expression."</span>
+                                <strong>「將英語視為理解世界的工具」</strong> <span class="note">"Using English as a tool to understand the world."</span>
                                 <ul class="list-style" style="margin-top: 4px; margin-bottom: 0;">
-                                    <li><strong>五大核心領域：</strong>探討「身份認同、人生經歷、人類創造力、社會組織、共享地球」等議題，帶領孩子接觸 AI 倫理、環境變遷與文化傳承等真實文本。<br><span class="eng-text">Five Core Themes: Exploring Identities, Experiences, Human Ingenuity, Social Organization, and Sharing the Planet, introducing real-world texts on AI ethics, climate change, and cultural heritage.</span></li>
-                                    <li><strong>多元體裁寫作（論證基礎）：</strong>引導孩子練習撰寫社論（Op-Ed）、正式提案（Proposal）、部落格（Blog）與正式書信（Formal Letter），適應不同讀者設定與寫作語氣。<br><span class="eng-text">Text-Type Writing: Practicing Op-Eds, proposals, blogs, and formal letters, adapting tone to different target audiences.</span></li>
+                                    <li><strong>五大核心領域：</strong>探討「身份認同、人生經歷、人類創造力、社會組織、共享地球」等議題，帶領孩子接觸 AI 倫理、環境變遷與文化傳承等<span class="no-orphan">真實文本。</span><br><span class="eng-text">Five Core Themes: Exploring Identities, Experiences, Human Ingenuity, Social Organization, and Sharing the Planet, introducing real-world texts on AI ethics, climate change, and cultural heritage.</span></li>
+                                    <li><strong>多元體裁寫作（論證基礎）：</strong>引導孩子練習撰寫社論（Op-Ed）、正式提案（Proposal）、部落格（Blog）與正式書信（Formal Letter），適應不同讀者設定與<span class="no-orphan">寫作語氣。</span><br><span class="eng-text">Text-Type Writing: Practicing Op-Eds, proposals, blogs, and formal letters, adapting tone to different target audiences.</span></li>
                                 </ul>
                             </td>
                         </tr>
@@ -576,8 +567,8 @@
                             <td>
                                 <strong>「用最嚴謹的語法架構，輕鬆駕馭升學長難句」</strong> <span class="note">"Mastering rigorous grammar structures to effortlessly navigate complex academic reading."</span>
                                 <ul class="list-style" style="margin-top: 4px; margin-bottom: 0;">
-                                    <li><strong>進階語法大通關：</strong>採用高階經典《藍本 Azar》，系統化梳理完成時態的細微語氣、複雜被動語態、高級修飾語、假設語氣以及倒裝句型。<br><span class="eng-text">Advanced Grammar Mastery: Utilizing classic blue Azar to systematically deconstruct subtle tenses, passives, conditionals, and inversions.</span></li>
-                                    <li><strong>精準應對會考題型：</strong>當孩子習慣了解構高中的長難句與邏輯表達，回看國中會考的英語試題時，將能以更清晰的「語意結構感」精準作答，穩拿 A++ 實力。<br><span class="eng-text">Enhancing Local Exam Confidence: Training students to analyze complex structures to comfortably handle CAP exam questions with high-level intuition.</span></li>
+                                    <li><strong>文法架構梳理：</strong>運用經典的 Azar 圖表，系統化解構完成式、被動語態與三大子句等國中<span class="no-orphan">核心文法。</span><br><span class="eng-text">Grammar Structure: Utilizing classic Azar charts to systematically deconstruct core grammar including perfect tenses, passive voice, and relative clauses.</span></li>
+                                    <li><strong>課堂現場寫作：</strong>每週配合文法進度，引導學生在課堂上直接完成段落練習，並給予<span class="no-orphan">即時回饋。</span><br><span class="eng-text">In-Class Writing: Aligned with the grammar timeline, students practice paragraph writing in class with immediate teacher feedback.</span></li>
                                 </ul>
                             </td>
                         </tr>
@@ -593,32 +584,32 @@
                 <ul class="list-style" style="margin-bottom: 0;">
                     <li>
                         <strong>Phase 1：身分認同與高階時態 (Lessons 1-3 | Aug 31 - Sep 14)</strong>
-                        <br>• <strong>主題思辨：</strong>探討青少年次文化、語言與文化的根源、以及面對大考的心理健康調適。<span class="eng-text">Global Themes: Youth subcultures, linguistic heritage, and stress-coping mechanisms for exam takers.</span>
+                        <br>• <strong>主題思辨：</strong>探討青少年次文化、語言與文化的根源、以及面對大考的心理<span class="no-orphan">健康調適。</span><span class="eng-text">Global Themes: Youth subcultures, linguistic heritage, and stress-coping mechanisms for exam takers.</span>
                         <br>• <strong>高階語法：</strong>英文時態系統深度解析、狀態動詞與動態動詞細微差別、主謂一致性（進階複數）。<span class="eng-text">Grammar Mastery: Deep dive into the tense system, stative vs. dynamic verbs, and advanced subject-verb agreement.</span>
                     </li>
                     <li style="margin-top: 8px;">
                         <strong>Phase 2：人生經歷與被動助動詞 (Lessons 4-5 | Sep 21 - Oct 5)</strong>
-                        <br>• <strong>主題思辨：</strong>跨文化成年禮、過度觀光與生態旅遊的平衡、全球公民意識。<span class="eng-text">Global Themes: Cross-cultural rites of passage, overtourism vs. ecotourism, and global citizenship.</span>
+                        <br>• <strong>主題思辨：</strong>跨文化成年禮、過度觀光與生態旅遊的平衡、全球<span class="no-orphan">公民意識。</span><span class="eng-text">Global Themes: Cross-cultural rites of passage, overtourism vs. ecotourism, and global citizenship.</span>
                         <br>• <strong>高階語法：</strong>過去時間的助動詞推測（must/should have V3）、複雜與狀態被動語態。<span class="eng-text">Grammar Mastery: Modals of past certainty/regret, complex and stative passive voice structures.</span>
                     </li>
                     <li style="margin-top: 8px;">
                         <strong>Phase 3：人類創造力與三大高級子句 (Lessons 6-8 | Oct 12 - Nov 2)</strong>
-                        <br>• <strong>主題思辨：</strong>AI 科技與未來職場、現代藝術與圖像閱讀（Banksy 作品分析）、基因編輯的科學倫理。<span class="eng-text">Global Themes: AI technology & the future of work, visual literacy in modern street art, and ethics in gene editing.</span>
+                        <br>• <strong>主題思辨：</strong>AI 科技與未來職場、現代藝術與圖像閱讀（Banksy 作品分析）、基因編輯的<span class="no-orphan">科學倫理。</span><span class="eng-text">Global Themes: AI technology & the future of work, visual literacy in modern street art, and ethics in gene editing.</span>
                         <br>• <strong>高階語法：</strong>名詞子句（含萬用虛主詞）、形容詞子句（介系詞＋關代）、副詞子句與邏輯連接詞。<span class="eng-text">Grammar Mastery: Noun clauses (subjunctives), adjective clauses (prep + relative), and adverb clauses.</span>
                     </li>
                     <li style="margin-top: 8px;">
                         <strong>Phase 4：社會組織與進階修飾語 (Lessons 9-11 | Nov 9 - Nov 23)</strong>
-                        <br>• <strong>主題思辨：</strong>全球教育體制對比（學科考試 vs. 多元評量）、青少年司法制度、遠端工作與高齡化社會。<span class="eng-text">Global Themes: Global education models (exams vs. assessments), juvenile justice, and remote work impacts.</span>
+                        <br>• <strong>主題思辨：</strong>全球教育體制對比（學科考試 vs. 多元評量）、青少年司法制度、遠端工作與<span class="no-orphan">高齡化社會。</span><span class="eng-text">Global Themes: Global education models (exams vs. assessments), juvenile justice, and remote work impacts.</span>
                         <br>• <strong>高階語法：</strong>動名詞與不定詞的語意轉變、平行結構與不對稱句型修飾。<span class="eng-text">Grammar Mastery: Gerunds & infinitives with meaning changes, parallel structures, and advanced modifiers.</span>
                     </li>
                     <li style="margin-top: 8px;">
                         <strong>Phase 5：共享地球與高級倒裝句型 (Lessons 12-14 | Nov 30 - Dec 14)</strong>
-                        <br>• <strong>主題思辨：</strong>氣候變遷與環境難民、快時尚背後的資源消耗、國際非政府組織（NGO）的全球合作。<span class="eng-text">Global Themes: Climate change and eco-refugees, the true cost of fast fashion, and international NGO cooperation.</span>
+                        <br>• <strong>主題思辨：</strong>氣候變遷與環境難民、快時尚背後的資源消耗、國際非政府組織（NGO）的<span class="no-orphan">全球合作。</span><span class="eng-text">Global Themes: Climate change and eco-refugees, the true cost of fast fashion, and international NGO cooperation.</span>
                         <br>• <strong>高階語法：</strong>混合條件句（Type 2 & 3）、高級假設語氣（wish / as if）、條件句省略與高級倒裝句型。<span class="eng-text">Grammar Mastery: Mixed conditionals, hypothetical pasts, omitted "if" structures, and advanced emphasis inversions.</span>
                     </li>
                     <li style="margin-top: 8px;">
                         <strong>Phase 6：思辨發表與高中銜接複習 (Lessons 15-17 | Dec 21 - Jan 4)</strong>
-                        <br>• <strong>主題思辨：</strong>IBDP 寫作體裁（Paper 1）全真模擬、個人世界議題口說發表（IO Presentation）、高中知識論（TOK）哲學啟蒙。<span class="eng-text">Global Themes: Paper 1 Text Handling, Individual Oral (IO) Simulation, and introduction to Theory of Knowledge (TOK).</span>
+                        <br>• <strong>主題思辨：</strong>IBDP 寫作體裁（Paper 1）全真模擬、個人世界議題口說發表（IO Presentation）、高中知識論（TOK）<span class="no-orphan">哲學啟蒙。</span><span class="eng-text">Global Themes: Paper 1 Text Handling, Individual Oral (IO) Simulation, and introduction to Theory of Knowledge (TOK).</span>
                         <br>• <strong>高階語法：</strong>會考高分盲點與陷阱題總複習、藍本 Azar 診斷測驗、高中語法斷層銜接。<span class="eng-text">Grammar Mastery: Comprehensive review for CAP exam traps, Azar diagnostic testing, and high school grammar transition.</span>
                     </li>
                 </ul>
@@ -641,11 +632,11 @@
             <h2 class="section-heading" style="margin-top: 0;">🏆 本學期五大核心學習目標 | Five Core Learning Objectives</h2>
             <div class="info-card" style="padding: 10px 14px;">
                 <ul class="list-style" style="margin-bottom: 0;">
-                    <li><strong>1. 完整掌握核心文法：</strong>融會貫通完成式、被動語態與複合子句等複雜句型。<br><span class="eng-text">Core Grammar Mastery: Thoroughly integrate perfect tenses, passive voice, and complex clauses.</span></li>
-                    <li><strong>2. 理解 6 個跨學科主題：</strong>完成 Discover 4 前 12 單元的閱讀，累積厚實的學科詞彙。<br><span class="eng-text">6 Interdisciplinary Themes: Complete the first 12 units of Discover 4 and build a solid academic vocabulary.</span></li>
-                    <li><strong>3. 具備 100-150 字獨立寫作能力：</strong>配合文法進度，掌握原因分析與敘事文等基本文體結構。<br><span class="eng-text">Paragraph Essay Writing: Write 100-150 word paragraphs, mastering cause-and-effect and narrative structures.</span></li>
-                    <li><strong>4. 建立英語討論習慣：</strong>在 10 人以內的課堂環境中，獲得充分的口說表達與同儕互動機會。<br><span class="eng-text">Habitual English Discussion: Ensure ample opportunities for oral expression and peer interaction within a small class under 10 students.</span></li>
-                    <li><strong>5. 奠定長期語言能力基礎：</strong>在完成階段性升學文法目標的同時，提早適應高中與國際檢定所需的閱讀深度。<br><span class="eng-text">Long-term Language Foundation: Meet current academic standards while adapting to the reading depth required for high school and international exams.</span></li>
+                    <li><strong>1. 完整掌握核心文法：</strong>融會貫通完成式、被動語態與複合子句等<span class="no-orphan">複雜句型。</span><br><span class="eng-text">Core Grammar Mastery: Thoroughly integrate perfect tenses, passive voice, and complex clauses.</span></li>
+                    <li><strong>2. 理解 6 個跨學科主題：</strong>完成 Discover 4 前 12 單元的閱讀，累積厚實的<span class="no-orphan">學科詞彙。</span><br><span class="eng-text">6 Interdisciplinary Themes: Complete the first 12 units of Discover 4 and build a solid academic vocabulary.</span></li>
+                    <li><strong>3. 具備 100-150 字獨立寫作能力：</strong>配合文法進度，掌握原因分析與敘事文等基本<span class="no-orphan">文體結構。</span><br><span class="eng-text">Paragraph Essay Writing: Write 100-150 word paragraphs, mastering cause-and-effect and narrative structures.</span></li>
+                    <li><strong>4. 建立英語討論習慣：</strong>在 10 人以內的課堂環境中，獲得充分的口說表達與同儕<span class="no-orphan">互動機會。</span><br><span class="eng-text">Habitual English Discussion: Ensure ample opportunities for oral expression and peer interaction within a small class under 10 students.</span></li>
+                    <li><strong>5. 奠定長期語言能力基礎：</strong>在完成階段性升學文法目標的同時，提早適應高中與國際檢定所需的<span class="no-orphan">閱讀深度。</span><br><span class="eng-text">Long-term Language Foundation: Meet current academic standards while adapting to the reading depth required for high school and international exams.</span></li>
                 </ul>
             </div>
 
@@ -656,13 +647,13 @@
                     <span class="light-en-text" style="display:block; margin-top:1px;">To ensure learning continuity and progress tracking, the following support plans are available if a student is unable to attend and an in-person make-up class cannot be scheduled:</span>
                 </p>
                 <ul class="list-style" style="margin-bottom: 0;">
-                    <li><strong>課堂重點筆記與進度指引：</strong>教師將於課後提供當堂課的核心語法圖解筆記、寫作關鍵字架構，以及全球議題討論摘要，讓孩子在家中也能精準掌握課程核心。<br><span class="eng-text">Class Notes & Guided Study: Comprehensive grammar summaries, writing frameworks, and discussion outlines from the missed session will be provided to help the student review at home.</span></li>
-                    <li><strong>個別化寫作點評：</strong>請假同學仍可於期限內提交當堂課的「主題寫作練習」，授課老師將進行一對一的細緻批改與反饋，確保寫作邏輯不落後。<br><span class="eng-text">Individual Essay Feedback: Students can still submit their in-class paragraph writing and grammar exercises. The instructor will provide one-on-one detailed corrections and feedback.</span></li>
-                    <li><strong>課前/課後 10 分鐘重點釋疑：</strong>於下次實體上課時，授課老師將利用課前或課後時間，單獨為孩子進行 10 分鐘的核心觀念檢視與答疑，協助孩子安心銜接新進度。<br><span class="eng-text">Brief Check-in Sessions: The instructor will arrange a 10-minute brief consultation before or after the next class to clarify key concepts and ensure a smooth transition to the next unit.</span></li>
+                    <li><strong>課堂重點筆記與進度指引：</strong>教師將於課後提供當堂課的核心語法圖解筆記、寫作關鍵字架構，以及全球議題討論摘要，讓孩子在家中也能精準掌握<span class="no-orphan">課程核心。</span><br><span class="eng-text">Class Notes & Guided Study: Comprehensive grammar summaries, writing frameworks, and discussion outlines from the missed session will be provided to help the student review at home.</span></li>
+                    <li><strong>個別化寫作點評：</strong>請假同學仍可於期限內提交當堂課的「主題寫作練習」，授課老師將進行一對一的細緻批改與反饋，確保寫作邏輯<span class="no-orphan">不落後。</span><br><span class="eng-text">Individual Essay Feedback: Students can still submit their in-class paragraph writing and grammar exercises. The instructor will provide one-on-one detailed corrections and feedback.</span></li>
+                    <li><strong>課前/課後 10 分鐘重點釋疑：</strong>於下次實體上課時，授課老師將利用課前或課後時間，單獨為孩子進行 10 分鐘的核心觀念檢視與答疑，協助孩子安心銜接<span class="no-orphan">新進度。</span><br><span class="eng-text">Brief Check-in Sessions: The instructor will arrange a 10-minute brief consultation before or after the next class to clarify key concepts and ensure a smooth transition to the next unit.</span></li>
                 </ul>
             </div>
 
-            <h2 class="section-heading" style="margin-top: 8px;">📌 班級招生資訊 | Class Information</h2>
+            <h2 class="section-heading" style="margin-top: 8px;">📌 班級招生資訊 | Course Details</h2>
             <div class="table-container">
                 <table class="center-table ad-table">
                     <thead>
@@ -690,13 +681,13 @@
                         </tr>
                         <tr>
                             <td style="font-weight: bold;">🛡️ 新生入學條件 | Admission Requirements</td>
-                            <td class="left-align" style="color: var(--text-main); font-size: 12px; line-height: 1.45;">
+                            <td class="left-align" style="color: var(--text-main); font-size: 12.5px; line-height: 1.5;">
                                 1. 小朋友美語學習經驗需滿 5 年以上或具備英檢初級以上實力<br>
                                 2. 須通過補習班入學口試與筆試測驗
                             </td>
                         </tr>
                         <tr>
-                            <td style="font-weight: bold;">💰 課程學費 | Tuition Fee</td>
+                            <td style="font-weight: bold;">💰 課程学費 | Tuition Fee</td>
                             <td class="left-align">
                                 <strong style="color: var(--soft-red); font-size: 14px;">新進 C1 生原價：NT$17,140元</strong> <span class="note">(學費 $14,450 + 藍本Azar全套 $1,340 + 專屬筆記本 $500 + 學雜費 $1,020)</span>
                                 <strong style="color: var(--uci-blue); font-size: 14px; display:block; margin-top:2px;">B2 升 C1 生原價：NT$15,800元</strong> <span class="note">(學費 $14,450 + 專屬寫作筆記本 $500 + 學雜費 $1,020)</span>
@@ -709,7 +700,7 @@
             </div>
 
             <div class="pyp-badge">
-                <p>將英語實力內化為清晰思辨力，優雅跨越會考門檻並提早無縫接軌高中學習歷程！</p>
+                <p>將英語實力內化為清晰思辨力，優雅跨越會考門檻並提早無縫接軌高中學習<span class="no-orphan">歷程！</span></p>
                 <p style="font-size: 11px; font-weight: 400; color: #64748b; margin-top: 2px;">Communication, Accuracy, Confidence with Bobby English School!</p>
             </div>
 
@@ -723,7 +714,8 @@
             <div class="join-us-btn-container">
                 <img src="Advcnce.png" alt="立即開啟巴比美語進階卓越之門" class="cta-join-us-img" onclick="openDualLinks(event)">
             </div>
-            <div class="footer-image-box" style="margin-top: 0;">
+            <!-- 🎯 第三頁專屬圖檔容器：精準 100% 正中放置 -->
+            <div class="footer-image-box" style="margin-top: 0; width: 100%; margin-left: 0; justify-content: center;">
                 <img src="Advancekids.png" alt="巴比美語學員快樂探究合照" class="page-footer-img">
             </div>
         </div>
@@ -735,7 +727,7 @@
 function openDualLinks(event) {
     if (event) event.preventDefault();
     
-    // 🎯 Aegis 核心修正：標準化網址，防止被瀏覽器彈跳阻斷
+    // 🎯 Aegis 核心修正：標準化網址，防止被瀏覽器彈跳阻斷並移除結尾多餘斜線
     const mainLink = "https://bobbyenglishschool.github.io/2026BobbyEnglish-Advance-adv_c1.html";
     const contractLink = "https://bobbyenglishschool.github.io/2026BobbyEnglish-Contract-AdvanceC1.html";
     
