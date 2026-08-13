@@ -71,7 +71,7 @@
             flex-direction: column;
         }
 
-        /* 👑 頂部 Header 視覺升級 */
+        /* 👑 頂部 Header 視覺升級：加強右側內距，確保 Logo 完美向左內移進藍框 */
         .header-flex-box {
             display: flex;
             align-items: center; 
@@ -79,7 +79,7 @@
             gap: 15px;
             margin-bottom: 16px;
             background: linear-gradient(135deg, var(--uci-blue) 0%, var(--uci-blue-dark) 100%); 
-            padding: 18px 24px;
+            padding: 18px 28px 18px 20px; /* 增加右側內距 */
             border-radius: 10px;
             border-bottom: 4.5px solid var(--uci-gold);
             min-height: 140px;
@@ -149,13 +149,14 @@
             letter-spacing: 0.8px;
         }
 
-        /* 🎯 校標尺寸微調 */
+        /* 🎯 核心修復：校標微調向左移入藍框內部，增加右外距 */
         .logo-img {
             width: 100%;
-            max-width: 130px;
+            max-width: 122px; /* 微調最大寬度 */
             height: auto;
             object-fit: contain;
             flex-shrink: 0;
+            margin-right: 6px; /* 強制向左內移，避免壓靠右邊緣 */
             filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
         }
 
@@ -472,7 +473,7 @@
             .page { padding: 20px 15px 15px 15px; min-height: auto; }
             .header-flex-box { padding: 15px 18px; flex-direction: column-reverse; text-align: center; }
             .title-group { text-align: center; width: 100%; }
-            .logo-img { max-width: 110px; margin-bottom: 8px; }
+            .logo-img { max-width: 110px; margin-bottom: 8px; margin-right: 0; }
             .description-scroll-box { max-height: 260px; }
             table.ad-table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
             table.ad-table td { min-width: 160px; }
@@ -498,12 +499,13 @@
                     </h1>
                     <h2>"COMMUNICATION. ACCURACY. CONFIDENCE." 🚀</h2>
                 </div>
+                <!-- 🎯 核心修復：去背校標圖檔向左移入深藍框內部 -->
                 <img src="BOBBY ENGLISH SCHOOL_去背檔.png" alt="私立巴比美語短期補習班標章" class="logo-img">
             </div>
 
             <h2 class="section-heading">💡 教學理念：關於現階段的英語思維 | Educational Philosophy</h2>
             
-            <!-- 📜 動態捲動卡片區塊（已移除提示文字標籤） -->
+            <!-- 📜 動態捲動卡片區塊 -->
             <div class="description-scroll-box">
                 <p class="paragraph-desc" style="font-size: 13.5px; color: var(--uci-blue); font-weight: 700; margin-bottom: 6px;">
                     【將語言實力轉化為深刻的<span class="no-orphan">觀點表達】</span>
@@ -687,7 +689,7 @@
                             </td>
                         </tr>
                         <tr>
-                            <td style="font-weight: bold;">💰 課程学費 | Tuition Fee</td>
+                            <td style="font-weight: bold;">💰 課程學費 | Tuition Fee</td>
                             <td class="left-align">
                                 <strong style="color: var(--soft-red); font-size: 14px;">新進 C1 生原價：NT$17,140元</strong> <span class="note">(學費 $14,450 + 藍本Azar全套 $1,340 + 專屬筆記本 $500 + 學雜費 $1,020)</span>
                                 <strong style="color: var(--uci-blue); font-size: 14px; display:block; margin-top:2px;">B2 升 C1 生原價：NT$15,800元</strong> <span class="note">(學費 $14,450 + 專屬寫作筆記本 $500 + 學雜費 $1,020)</span>
