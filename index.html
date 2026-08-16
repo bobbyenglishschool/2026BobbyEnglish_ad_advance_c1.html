@@ -149,14 +149,14 @@
             letter-spacing: 0.8px;
         }
 
-        /* 🎯 核心修復：校標精準向左微移，使其完美位在「左側星星」與「右側藍框線」正中間！ */
+        /* 校標精準向左微移，使其完美位在「左側星星」與「右側藍框線」正中間 */
         .logo-img {
             width: 100%;
-            max-width: 118px; /* 精算最佳尺寸 */
+            max-width: 118px;
             height: auto;
             object-fit: contain;
             flex-shrink: 0;
-            margin-right: 32px; /* 強制向左平移，實現左側星星與右邊框線之間的幾何置中 */
+            margin-right: 32px;
             filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
         }
 
@@ -205,7 +205,7 @@
 
         /* 🎯 中英文字體分離與層級對比樣式 */
         p.paragraph-desc {
-            font-size: 13.5px; /* 中文字級清晰易讀 */
+            font-size: 13.5px;
             font-weight: 500;
             margin: 0 0 8px 0;
             text-align: justify;
@@ -247,13 +247,12 @@
             font-weight: 700;
         }
 
-        /* 🎯 避孤晶片：確保標語與單詞最後關鍵詞不單獨換行成單字 */
         .no-orphan {
             display: inline-block;
             white-space: nowrap;
         }
 
-        /* 🛡️ 核心表格全邊框防線：外框與內部單元格完整顯示 */
+        /* 🔒 核心表格三大邊框防線：外框與內部單元格強制以 #1b3d6d 實體深藍顯影 */
         .table-container {
             width: 100%;
             margin-top: 8px;
@@ -262,20 +261,21 @@
 
         table.ad-table { 
             width: 100%; 
-            border-collapse: separate; /* 改為 separate 以完整呈現整體外框 */
+            border-collapse: separate;
             border-spacing: 0;
             font-size: 12px;
-            table-layout: fixed; /* 嚴格固定欄位寬度，防溢出！ */
+            table-layout: fixed;
             word-wrap: break-word;
-            border: 1px solid var(--border-color) !important; /* 強制整體外框顯影 */
+            border: 1px solid #1b3d6d !important; /* 核心規範：1px 實體深藍外框 */
             border-radius: 6px;
             overflow: hidden;
+            background-color: #ffffff;
         }
 
         /* 明確設定內部格線與邊界 */
         table.ad-table th, table.ad-table td { 
-            border-right: 1px solid var(--border-color);
-            border-bottom: 1px solid var(--border-color);
+            border-right: 1px solid #1b3d6d !important;
+            border-bottom: 1px solid #1b3d6d !important;
             padding: 9px 12px; 
             vertical-align: middle; 
             text-align: left; 
@@ -283,7 +283,6 @@
             word-break: break-word;
         }
 
-        /* 🎯 第二欄章節專屬對齊優化：微調內距，讓章節內容向左微移、精準居中不壓右線！ */
         table.ad-table td.col-chapter {
             text-align: center !important;
             padding: 8px 4px !important;
@@ -291,10 +290,10 @@
 
         /* 消除最右側與最底部的重複邊框 */
         table.ad-table th:last-child, table.ad-table td:last-child {
-            border-right: none;
+            border-right: none !important;
         }
         table.ad-table tr:last-child td {
-            border-bottom: none;
+            border-bottom: none !important;
         }
 
         table.ad-table th { 
@@ -332,7 +331,7 @@
             color: var(--text-sub); 
             display: block; 
             margin-top: 2px; 
-            font-size: 11px; /* 英文說明縮小襯托 */
+            font-size: 11px; 
             font-weight: 400; 
             line-height: 1.4;
             text-align: justify;
@@ -376,7 +375,6 @@
             font-family: inherit;
         }
 
-        /* 🖼️ 頁 1 與頁 2 頁尾圖檔容器 */
         .footer-image-box {
             width: calc(100% + 80px);
             margin-left: -40px; 
@@ -398,7 +396,6 @@
             border: none;
         }
 
-        /* 🎯 核心修復：第三頁專屬頁尾容器精準居中，取消偏左推擠負邊距 */
         .last-page-footer-box {
             width: 100%;
             margin: 8px auto 0 auto;
@@ -416,7 +413,6 @@
             margin-bottom: 4px;
         }
 
-        /* 🎯 按鈕圖檔尺寸最佳化 */
         .cta-join-us-img {
             width: 100%;
             max-width: 145px;
@@ -439,7 +435,7 @@
             .ad-container { max-width: 100%; width: 100%; box-shadow: none; border-radius: 0; }
             .page {
                 width: 210mm;      
-                height: 296mm;     
+                height: 296mm;      
                 min-height: 296mm;
                 max-height: 296mm;
                 page-break-after: always; 
@@ -447,13 +443,13 @@
                 padding: 15mm 18mm 0 18mm !important; 
                 margin: 0;
                 border-bottom: none;
-                overflow: hidden !important; /* 列印時鎖定邊界 */
+                overflow: hidden !important;
             }
             .page:last-child { page-break-after: avoid; }
             .description-scroll-box { max-height: none !important; overflow-y: visible !important; border: none !important; padding: 0 !important; }
             .header-flex-box { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
             table.ad-table th, table.ad-table td { 
-                border: 1px solid var(--border-color) !important; 
+                border: 1px solid #1b3d6d !important; 
                 -webkit-print-color-adjust: exact; 
                 print-color-adjust: exact; 
             }
@@ -499,7 +495,6 @@
                     </h1>
                     <h2>"COMMUNICATION. ACCURACY. CONFIDENCE." 🚀</h2>
                 </div>
-                <!-- 🎯 核心修復：去背校標圖檔向左平移置中於「左側星星」與「右側藍框線」正中間 -->
                 <img src="BOBBY ENGLISH SCHOOL_去背檔.png" alt="私立巴比美語短期補習班標章" class="logo-img">
             </div>
 
@@ -516,7 +511,8 @@
                 </p>
                 <p class="paragraph-desc" style="margin-top: 8px; border-top: 1px dashed var(--border-color); padding-top: 8px;">
                     <strong style="font-weight: 800; color: var(--uci-blue);">【Developing Critical Academic Thought】</strong>
-                    <span class="light-en-text">For 9th graders who already possess intermediate-level English proficiency, the key to language development at this stage lies in turning language skills into meaningful, well-expressed viewpoints. Before facing the upcoming CAP exam next May, students not only need a solid grasp of rigorous grammatical structures to handle complex reading passages but also need early exposure to the interdisciplinary critical thinking highly valued in high school and global academic frameworks. This course runs every Monday evening from August 31st to January 4th in a fully immersive English environment. We invite a selective small group of under 10 students to embark on a journey exploring global visions and structural writing. (※ Note: No classes on the public holidays of Sep 28 and Oct 26.)</span>
+                    <!-- 🎯 核心修改特區：已精準替換 Joy 指定的英文文案敘述！ -->
+                    <span class="light-en-text">For 9th graders who already possess intermediate-level English proficiency, the key to language development at this stage lies in turning language skills into meaningful, well-expressed viewpoints. Before facing the upcoming CAP exam next May, students not only need a solid grasp of rigorous grammatical structures to handle complex reading passages but also need early exposure to the interdisciplinary critical thinking highly valued in high school and global academic frameworks. This course runs every Monday evening from August 31st to January 4th in a fully immersive English environment. We welcome a small group of students to join us in exploring global outlooks and structural writing. (※ Note: No classes on the public holidays of Sep 28 and Oct 26.)</span>
                 </p>
             </div>
 
@@ -729,7 +725,7 @@
 function openDualLinks(event) {
     if (event) event.preventDefault();
     
-    // 🎯 Aegis 核心修正：標準化網址，防止被瀏覽器彈跳阻斷並移除結尾多餘斜線
+    // 🎯 Aegis 核心修正：標準化網址，防止被瀏覽器彈跳阻斷
     const mainLink = "https://bobbyenglishschool.github.io/2026BobbyEnglish-Advance-adv_c1.html";
     const contractLink = "https://bobbyenglishschool.github.io/2026BobbyEnglish-Contract-AdvanceC1.html";
     
