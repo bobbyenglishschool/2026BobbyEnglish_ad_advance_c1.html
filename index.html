@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <!-- 🎯 全載具核心天線：確保行動裝置與 A4 紙張列印排版 100% 完美自適應 -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Bobby English: Advance C1 — 青少年觀點表達與結構寫作班 | 私立巴比美語短期補習班</title>
+    <title>Advance C1: Global Perspectives & Structural Literacy | 私立巴比美語短期補習班</title>
     
     <!-- 引入專業雙語 Google Fonts 字型（Inter + Noto Sans TC） -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,10 +15,11 @@
         :root {
             --uci-blue: #1b3d6d; 
             --uci-blue-dark: #102a4d;
+            --uci-blue-hover: #142f54;
             --uci-gold: #fecc07; 
             --soft-red: #e74c3c;
             --card-bg: #f8fafc;
-            --border-color: #cbd5e1;
+            --border-color: #1b3d6d; /* 🎯 強制全面為巴比深藍色外框 */
             --line-color: #cbd5e1;
             --text-main: #1e293b;
             --text-sub: #475569;
@@ -177,8 +178,8 @@
         /* 📜 動態捲動卡片樣式 */
         .description-scroll-box {
             background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-left: 4px solid var(--uci-blue);
+            border: 1px solid #1b3d6d !important;
+            border-left: 4px solid var(--uci-blue) !important;
             padding: 14px 18px;
             border-radius: 8px;
             margin-bottom: 10px;
@@ -261,21 +262,20 @@
 
         table.ad-table { 
             width: 100%; 
-            border-collapse: separate;
-            border-spacing: 0;
+            border-collapse: collapse !important;
+            margin-bottom: 0;
             font-size: 12px;
             table-layout: fixed;
             word-wrap: break-word;
-            border: 1px solid #1b3d6d !important; /* 核心規範：1px 實體深藍外框 */
-            border-radius: 6px;
+            border: 1px solid #1b3d6d !important;
+            border-radius: 0px;
             overflow: hidden;
             background-color: #ffffff;
         }
 
         /* 明確設定內部格線與邊界 */
         table.ad-table th, table.ad-table td { 
-            border-right: 1px solid #1b3d6d !important;
-            border-bottom: 1px solid #1b3d6d !important;
+            border: 1px solid #1b3d6d !important;
             padding: 9px 12px; 
             vertical-align: middle; 
             text-align: left; 
@@ -288,16 +288,8 @@
             padding: 8px 4px !important;
         }
 
-        /* 消除最右側與最底部的重複邊框 */
-        table.ad-table th:last-child, table.ad-table td:last-child {
-            border-right: none !important;
-        }
-        table.ad-table tr:last-child td {
-            border-bottom: none !important;
-        }
-
         table.ad-table th { 
-            background-color: #f1f5f9; 
+            background-color: #f0f4f8; 
             color: var(--uci-blue); 
             text-align: center; 
             font-weight: 700;
@@ -312,7 +304,7 @@
 
         .info-card {
             background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
+            border: 1px solid #1b3d6d !important;
             padding: 12px 16px;
             border-radius: 6px;
             margin-top: 6px;
@@ -435,7 +427,7 @@
             .ad-container { max-width: 100%; width: 100%; box-shadow: none; border-radius: 0; }
             .page {
                 width: 210mm;      
-                height: 296mm;      
+                height: 296mm;     
                 min-height: 296mm;
                 max-height: 296mm;
                 page-break-after: always; 
@@ -511,7 +503,6 @@
                 </p>
                 <p class="paragraph-desc" style="margin-top: 8px; border-top: 1px dashed var(--border-color); padding-top: 8px;">
                     <strong style="font-weight: 800; color: var(--uci-blue);">【Developing Critical Academic Thought】</strong>
-                    <!-- 🎯 核心修改特區：已精準替換 Joy 指定的英文文案敘述！ -->
                     <span class="light-en-text">For 9th graders who already possess intermediate-level English proficiency, the key to language development at this stage lies in turning language skills into meaningful, well-expressed viewpoints. Before facing the upcoming CAP exam next May, students not only need a solid grasp of rigorous grammatical structures to handle complex reading passages but also need early exposure to the interdisciplinary critical thinking highly valued in high school and global academic frameworks. This course runs every Monday evening from August 31st to January 4th in a fully immersive English environment. We welcome a small group of students to join us in exploring global outlooks and structural writing. (※ Note: No classes on the public holidays of Sep 28 and Oct 26.)</span>
                 </p>
             </div>
@@ -627,31 +618,7 @@
     <!-- ================= PAGE 3 ================= -->
     <div class="page">
         <div class="page-content" style="padding-top: 5px;">
-            <h2 class="section-heading" style="margin-top: 0;">🏆 本學期五大核心學習目標 | Five Core Learning Objectives</h2>
-            <div class="info-card" style="padding: 10px 14px;">
-                <ul class="list-style" style="margin-bottom: 0;">
-                    <li><strong>1. 完整掌握核心文法：</strong>融會貫通完成式、被動語態與複合子句等<span class="no-orphan">複雜句型。</span><br><span class="eng-text">Core Grammar Mastery: Thoroughly integrate perfect tenses, passive voice, and complex clauses.</span></li>
-                    <li><strong>2. 理解 6 個跨學科主題：</strong>完成 Discover 4 前 12 單元的閱讀，累積厚實的<span class="no-orphan">學科詞彙。</span><br><span class="eng-text">6 Interdisciplinary Themes: Complete the first 12 units of Discover 4 and build a solid academic vocabulary.</span></li>
-                    <li><strong>3. 具備 100-150 字獨立寫作能力：</strong>配合文法進度，掌握原因分析與敘事文等基本<span class="no-orphan">文體結構。</span><br><span class="eng-text">Paragraph Essay Writing: Write 100-150 word paragraphs, mastering cause-and-effect and narrative structures.</span></li>
-                    <li><strong>4. 建立英語討論習慣：</strong>在 10 人以內的課堂環境中，獲得充分的口說表達與同儕<span class="no-orphan">互動機會。</span><br><span class="eng-text">Habitual English Discussion: Ensure ample opportunities for oral expression and peer interaction within a small class under 10 students.</span></li>
-                    <li><strong>5. 奠定長期語言能力基礎：</strong>在完成階段性升學文法目標的同時，提早適應高中與國際檢定所需的<span class="no-orphan">閱讀深度。</span><br><span class="eng-text">Long-term Language Foundation: Meet current academic standards while adapting to the reading depth required for high school and international exams.</span></li>
-                </ul>
-            </div>
-
-            <h2 class="section-heading" style="margin-top: 8px;">📋 學習支持與請假配套 | Learning Support & Attendance Policy</h2>
-            <div class="info-card" style="padding: 10px 14px;">
-                <p class="paragraph-desc" style="font-size: 11.5px; margin-bottom: 4px; color: var(--text-sub);">
-                    為確保每位同學的學習完整性與進度銜接，若因故不克出席且無法安排實體補課，我們提供以下細緻的進度支持方案：<br>
-                    <span class="light-en-text" style="display:block; margin-top:1px;">To ensure learning continuity and progress tracking, the following support plans are available if a student is unable to attend and an in-person make-up class cannot be scheduled:</span>
-                </p>
-                <ul class="list-style" style="margin-bottom: 0;">
-                    <li><strong>課堂重點筆記與進度指引：</strong>教師將於課後提供當堂課的核心語法圖解筆記、寫作關鍵字架構，以及全球議題討論摘要，讓孩子在家中也能精準掌握<span class="no-orphan">課程核心。</span><br><span class="eng-text">Class Notes & Guided Study: Comprehensive grammar summaries, writing frameworks, and discussion outlines from the missed session will be provided to help the student review at home.</span></li>
-                    <li><strong>個別化寫作點評：</strong>請假同學仍可於期限內提交當堂課的「主題寫作練習」，授課老師將進行一對一的細緻批改與反饋，確保寫作邏輯<span class="no-orphan">不落後。</span><br><span class="eng-text">Individual Essay Feedback: Students can still submit their in-class paragraph writing and grammar exercises. The instructor will provide one-on-one detailed corrections and feedback.</span></li>
-                    <li><strong>課前/課後 10 分鐘重點釋疑：</strong>於下次實體上課時，授課老師將利用課前或課後時間，單獨為孩子進行 10 分鐘的核心觀念檢視與答疑，協助孩子安心銜接<span class="no-orphan">新進度。</span><br><span class="eng-text">Brief Check-in Sessions: The instructor will arrange a 10-minute brief consultation before or after the next class to clarify key concepts and ensure a smooth transition to the next unit.</span></li>
-                </ul>
-            </div>
-
-            <h2 class="section-heading" style="margin-top: 8px;">📌 班級招生資訊 | Course Details</h2>
+            <h2 class="section-heading" style="margin-top: 0;">📌 班級招生資訊 | Course Details</h2>
             <div class="table-container">
                 <table class="center-table ad-table">
                     <thead>
@@ -667,7 +634,17 @@
                         </tr>
                         <tr>
                             <td style="font-weight: bold;">⏰ 上課時間 | Class Time</td>
-                            <td class="left-align">每週一晚上 7:00 p.m. - 9:00 p.m. (每次 2 小時)<br><span class="note">Every Monday 7:00 - 9:00 p.m. (2 hours per lesson)</span></td>
+                            <!-- 🎯 Aegis 核心 UI 規範 3：幾何 100% 精準居中，格式與報名表/契約書完全一致 -->
+                            <td style="text-align: center; vertical-align: middle;">
+                                <div style="display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding: 2px 0;">
+                                    <div style="font-weight:800; color:var(--uci-blue); font-size:13px; line-height:1.2;">
+                                        <span class="no-orphan">每週一晚上</span>
+                                    </div>
+                                    <div style="font-weight:700; color:var(--uci-blue); font-size:11.5px; line-height:1.2; margin-top:3px;">
+                                        <span class="no-orphan">7:00 PM - 9:00 PM (2小時/堂)</span>
+                                    </div>
+                                </div>
+                            </td>
                         </tr>
                         <tr>
                             <td style="font-weight: bold;">🔢 總堂數 | Total Lessons</td>
@@ -687,10 +664,11 @@
                         <tr>
                             <td style="font-weight: bold;">💰 課程學費 | Tuition Fee</td>
                             <td class="left-align">
-                                <strong style="color: var(--soft-red); font-size: 14px;">新進 C1 生原價：NT$17,140元</strong> <span class="note">(學費 $14,450 + 藍本Azar全套 $1,340 + 專屬筆記本 $500 + 學雜費 $1,020)</span>
-                                <strong style="color: var(--uci-blue); font-size: 14px; display:block; margin-top:2px;">B2 升 C1 生原價：NT$15,800元</strong> <span class="note">(學費 $14,450 + 專屬寫作筆記本 $500 + 學雜費 $1,020)</span>
-                                <span class="note" style="margin-top:4px; color:#c00; font-weight:700;">💡 續班與優惠折扣 (新進生 / 升班生)：<br>
-                                • 9折：$15,426元 / $14,220元 &nbsp;|&nbsp; • 85折：$14,569元 / $13,430元 &nbsp;|&nbsp; • 8折：$13,712元 / $12,640元</span>
+                                <strong style="color: var(--soft-red); font-size: 14.5px;">新進 C1 生原價：NT$17,140元</strong> <span class="note">(學費 $14,450 + 藍本Azar全套 $1,340 + 專屬筆記本 $500 + 學雜費 $1,020)</span>
+                                <strong style="color: var(--uci-blue); font-size: 14.5px; display:block; margin-top:2px;">B2 升 C1 生原價：NT$15,800元</strong> <span class="note">(學費 $14,450 + 專屬寫作筆記本 $500 + 學雜費 $1,020)</span>
+                                <!-- 🎯 Aegis 核心修正：四捨五入全項目連動動態計算：新進生 9折 $15,426 / 85折 $14,569 / ✨ 8折 $13,712 ； 升班生 9折 $14,220 / 85折 $13,430 / ✨ 8折 $12,640 -->
+                                <span class="note" style="margin-top:4px; color:#c00; font-weight:700;">💡 全項目動態折扣特惠 (新進生 / 升班生)：<br>
+                                • 9折：$15,426元 / $14,220元 &nbsp;|&nbsp; • 85折：$14,569元 / $13,430元 &nbsp;|&nbsp; • ✨ 8折：$13,712元 / $12,640元</span>
                             </td>
                         </tr>
                     </tbody>
@@ -721,24 +699,26 @@
 
 </div>
 
+<!-- 📡 雙視窗雙開機制，具備 Safari 防阻斷備援機制 -->
 <script>
 function openDualLinks(event) {
     if (event) event.preventDefault();
     
-    // 🎯 Aegis 核心修正：標準化網址，防止被瀏覽器彈跳阻斷
-    const mainLink = "https://bobbyenglishschool.github.io/2026BobbyEnglish-Advance-adv_c1.html";
-    const contractLink = "https://bobbyenglishschool.github.io/2026BobbyEnglish-Contract-AdvanceC1.html";
+    // 🎯 Aegis 核心修正：精準對應 GitHub Pages 發布網址
+    var mainLink = "https://bobbyenglishschool.github.io/2026BobbyEnglish-Advance-adv_c1.html";
+    var contractLink = "https://bobbyenglishschool.github.io/2026BobbyEnglish-Contract-AdvanceC1.html";
     
-    const w1 = window.open(mainLink, "_blank");
+    // 優先開啟主要報名系統
+    var w1 = window.open(mainLink, "_blank");
     
-    try {
-        const w2 = window.open(contractLink, "_blank");
-        if (!w2 || w2.closed || typeof w2.closed === 'undefined') {
-            console.warn("第二個視窗被瀏覽器彈跳攔截，建議提示使用者允許彈跳視窗。");
+    // 平滑延遲開啟第二個契約視窗，避免被行動端防護攔截
+    setTimeout(function() {
+        var w2 = window.open(contractLink, "_blank");
+        if (!w2 || w2.closed || typeof w2.closed == 'undefined') {
+            console.warn("Contract popup blocked. Guidance provided.");
+            alert("✨ 巴比美語溫馨提示：系統已為您開啟 Advance C1 報名表！若未自動開啟定型化契約書，請點擊報名頁面內的「契約審閱連結」即可查閱喔！");
         }
-    } catch (e) {
-        console.error("無法自動開啟第二個視窗:", e);
-    }
+    }, 150);
 }
 </script>
 </body>
