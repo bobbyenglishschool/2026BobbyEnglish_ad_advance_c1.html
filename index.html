@@ -54,11 +54,11 @@
             position: relative;
             background: #fff;
             padding: 30px 35px 20px 35px;
-            overflow: visible; /* 螢幕瀏覽時允許自然延伸 */
+            overflow: visible;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            min-height: 980px; /* 改為彈性最小高度 */
+            min-height: 980px;
             border-bottom: 2px dashed #e2e8f0;
         }
 
@@ -72,7 +72,7 @@
             flex-direction: column;
         }
 
-        /* 👑 頂部 Header 視覺升級：內距平衡，確保右側空間完全居中 */
+        /* 👑 頂部 Header 視覺升級 */
         .header-flex-box {
             display: flex;
             align-items: center; 
@@ -118,7 +118,6 @@
             margin-left: 4px;
         }
 
-        /* 🎯 標題第二行微調向下居中 */
         .title-group h1 span.zh-sub-title {
             display: block;
             font-size: 15.5px;
@@ -150,7 +149,6 @@
             letter-spacing: 0.8px;
         }
 
-        /* 校標精準向左微移，使其完美位在「左側星星」與「右側藍框線」正中間 */
         .logo-img {
             width: 100%;
             max-width: 118px;
@@ -175,7 +173,6 @@
             justify-content: space-between;
         }
 
-        /* 📜 動態捲動卡片樣式 */
         .description-scroll-box {
             background-color: var(--card-bg);
             border: 1px solid #1b3d6d !important;
@@ -200,11 +197,7 @@
             background: var(--uci-blue);
             border-radius: 4px;
         }
-        .description-scroll-box::-webkit-scrollbar-thumb:hover {
-            background: #0077b6;
-        }
 
-        /* 🎯 中英文字體分離與層級對比樣式 */
         p.paragraph-desc {
             font-size: 13.5px;
             font-weight: 500;
@@ -219,7 +212,6 @@
             margin-bottom: 0;
         }
 
-        /* 英文字級精緻縮小，優雅襯托 */
         .light-en-text {
             font-size: 11px;
             font-weight: 400; 
@@ -273,7 +265,6 @@
             background-color: #ffffff;
         }
 
-        /* 明確設定內部格線與邊界 */
         table.ad-table th, table.ad-table td { 
             border: 1px solid #1b3d6d !important;
             padding: 9px 12px; 
@@ -281,11 +272,6 @@
             text-align: left; 
             line-height: 1.5;
             word-break: break-word;
-        }
-
-        table.ad-table td.col-chapter {
-            text-align: center !important;
-            padding: 8px 4px !important;
         }
 
         table.ad-table th { 
@@ -421,7 +407,7 @@
             filter: drop-shadow(0 5px 10px rgba(0,0,0,0.2));
         }
 
-        /* 🖨️ 列印專用防護罩：只有在「真正列印紙張」時才精準鎖定 A4 尺寸！ */
+        /* 🖨️ 列印專用防護罩：A4 尺寸精準鎖定 */
         @media print {
             body { background-color: #fff; padding: 0; margin: 0; }
             .ad-container { max-width: 100%; width: 100%; box-shadow: none; border-radius: 0; }
@@ -492,7 +478,6 @@
 
             <h2 class="section-heading">💡 教學理念：關於現階段的英語思維 | Educational Philosophy</h2>
             
-            <!-- 📜 動態捲動卡片區塊 -->
             <div class="description-scroll-box">
                 <p class="paragraph-desc" style="font-size: 13.5px; color: var(--uci-blue); font-weight: 700; margin-bottom: 6px;">
                     【將語言實力轉化為深刻的<span class="no-orphan">觀點表達】</span>
@@ -634,7 +619,7 @@
                         </tr>
                         <tr>
                             <td style="font-weight: bold;">⏰ 上課時間 | Class Time</td>
-                            <!-- 🎯 Aegis 核心 UI 規範 3：幾何 100% 精準居中，格式與報名表/契約書完全一致 -->
+                            <!-- 🎯 Aegis 核心 UI 規範 3：幾何 100% 精準居中 -->
                             <td style="text-align: center; vertical-align: middle;">
                                 <div style="display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding: 2px 0;">
                                     <div style="font-weight:800; color:var(--uci-blue); font-size:13px; line-height:1.2;">
@@ -666,9 +651,6 @@
                             <td class="left-align">
                                 <strong style="color: var(--soft-red); font-size: 14.5px;">新進 C1 生原價：NT$17,140元</strong> <span class="note">(學費 $14,450 + 藍本Azar全套 $1,340 + 專屬筆記本 $500 + 學雜費 $1,020)</span>
                                 <strong style="color: var(--uci-blue); font-size: 14.5px; display:block; margin-top:2px;">B2 升 C1 生原價：NT$15,800元</strong> <span class="note">(學費 $14,450 + 專屬寫作筆記本 $500 + 學雜費 $1,020)</span>
-                                <!-- 🎯 Aegis 核心修正：四捨五入全項目連動動態計算：新進生 9折 $15,426 / 85折 $14,569 / ✨ 8折 $13,712 ； 升班生 9折 $14,220 / 85折 $13,430 / ✨ 8折 $12,640 -->
-                                <span class="note" style="margin-top:4px; color:#c00; font-weight:700;">💡 全項目動態折扣特惠 (新進生 / 升班生)：<br>
-                                • 9折：$15,426元 / $14,220元 &nbsp;|&nbsp; • 85折：$14,569元 / $13,430元 &nbsp;|&nbsp; • ✨ 8折：$13,712元 / $12,640元</span>
                             </td>
                         </tr>
                     </tbody>
@@ -688,9 +670,8 @@
 
         <div class="last-page-footer-box">
             <div class="join-us-btn-container">
-                <img src="Advcnce.png" alt="立即開啟巴比美語進階卓越之門" class="cta-join-us-img" onclick="openDualLinks(event)">
+                <img src="Advcnce.png" alt="開啟巴比美語進階卓越之門" class="cta-join-us-img" onclick="openDualLinks(event)">
             </div>
-            <!-- 🎯 第三頁專屬圖檔容器：精準 100% 正中放置 -->
             <div class="footer-image-box" style="margin-top: 0; width: 100%; margin-left: 0; justify-content: center;">
                 <img src="Advancekids.png" alt="巴比美語學員快樂探究合照" class="page-footer-img">
             </div>
@@ -704,14 +685,12 @@
 function openDualLinks(event) {
     if (event) event.preventDefault();
     
-    // 🎯 Aegis 核心修正：精準對應 GitHub Pages 發布網址
+    // 🎯 Aegis 核心精準對應 GitHub Pages 發布網址
     var mainLink = "https://bobbyenglishschool.github.io/2026BobbyEnglish-Advance-adv_c1.html";
     var contractLink = "https://bobbyenglishschool.github.io/2026BobbyEnglish-Contract-AdvanceC1.html";
     
-    // 優先開啟主要報名系統
     var w1 = window.open(mainLink, "_blank");
     
-    // 平滑延遲開啟第二個契約視窗，避免被行動端防護攔截
     setTimeout(function() {
         var w2 = window.open(contractLink, "_blank");
         if (!w2 || w2.closed || typeof w2.closed == 'undefined') {
