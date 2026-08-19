@@ -413,7 +413,7 @@
             .ad-container { max-width: 100%; width: 100%; box-shadow: none; border-radius: 0; }
             .page {
                 width: 210mm;      
-                height: 296mm;     
+                height: 296mm;      
                 min-height: 296mm;
                 max-height: 296mm;
                 page-break-after: always; 
@@ -468,7 +468,7 @@
             <div class="header-flex-box">
                 <div class="title-group">
                     <h1>
-                        <span class="en-main-title"><b>Bobby English: Advance C1 - </b><span class="zh-title-tag">青少年觀點表達與結構寫作班</span></span>
+                        <span class="en-main-title">Bobby English: Advance C1 - <span class="zh-title-tag">青少年觀點表達與結構寫作班</span></span>
                         <span class="zh-sub-title">✨ C1 青少年觀點表達與結構寫作班 <span class="en-sub-tag">(Global Perspectives & Structural Literacy)</span> ✨</span>
                     </h1>
                     <h2>"COMMUNICATION. ACCURACY. CONFIDENCE." 🚀</h2>
@@ -649,7 +649,6 @@
                         <tr>
                             <td style="font-weight: bold;">💰 課程學費 | Tuition Fee</td>
                             <td class="left-align">
-                                <!-- 🎯 Aegis 精準文字與原價變更修復點 -->
                                 <strong style="color: var(--soft-red); font-size: 14.5px;">新生（需購買教材）原價：NT$17,310元</strong> <span class="note">(學費 $14,450 + 藍本Azar全套 $1,340 + 專屬筆記本 $500 + 學雜費 $1,020)</span>
                                 <strong style="color: var(--uci-blue); font-size: 14.5px; display:block; margin-top:2px;">舊生（無需購買教材）原價：NT$15,970元</strong> <span class="note">(學費 $14,450 + 專屬寫作筆記本 $500 + 學雜費 $1,020)</span>
                             </td>
@@ -681,24 +680,24 @@
 
 </div>
 
-<!-- 📡 雙視窗雙開機制，具備 Safari 防阻斷備援機制 -->
+<!-- 📡 Aegis 修正版：完美破解 Safari/Chrome 防彈窗阻斷機制 -->
 <script>
 function openDualLinks(event) {
     if (event) event.preventDefault();
     
-    // 🎯 Aegis 核心精準對應 GitHub Pages 發布網址
-    var mainLink = "https://bobbyenglishschool.github.io/2026BobbyEnglish-Advance-adv_c1.html";
-    var contractLink = "https://bobbyenglishschool.github.io/2026BobbyEnglish-Contract-AdvanceC1.html";
+    // 🎯 Aegis 核心對齊：精準對應 GitHub Standard 命名
+    var mainLink = "https://bobbyenglishschool.github.io/2026BobbyEnglish-Advance-C1.html";
+    var contractLink = "https://bobbyenglishschool.github.io/2026BobbyEnglish-Contract-Advance-C1.html";
     
+    // 🎯 核心修正：取消原本傳遞缺陷！在使用者真實點擊當下，同步發射兩個視窗！
     var w1 = window.open(mainLink, "_blank");
+    var w2 = window.open(contractLink, "_blank");
     
-    setTimeout(function() {
-        var w2 = window.open(contractLink, "_blank");
-        if (!w2 || w2.closed || typeof w2.closed == 'undefined') {
-            console.warn("Contract popup blocked. Guidance provided.");
-            alert("✨ 巴比美語溫馨提示：系統已為您開啟 Advance C1 報名表！若未自動開啟定型化契約書，請點擊報名頁面內的「契約審閱連結」即可查閱喔！");
-        }
-    }, 150);
+    // 🛡️ 防彈備援機制：如果第二個視窗被手機強硬阻斷，自動進行溫馨指引
+    if (!w2 || w2.closed || typeof w2.closed === 'undefined') {
+        console.warn("Contract popup blocked by mobile safety shield. Fallback engaged.");
+        alert("✨ 巴比美語溫馨提示：系統已為您開啟 Advance C1 報名表！若定型化契約未自動彈出，請於報名頁面點擊上方「契約審閱連結」即可查看喔！");
+    }
 }
 </script>
 </body>
