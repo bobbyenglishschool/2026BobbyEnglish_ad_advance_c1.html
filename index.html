@@ -49,7 +49,6 @@
             overflow: hidden;
         }
 
-        /* 🎯 螢幕瀏覽彈性自適應，徹底解決內容隱藏問題！ */
         .page { 
             position: relative;
             background: #fff;
@@ -72,7 +71,6 @@
             flex-direction: column;
         }
 
-        /* 👑 頂部 Header 視覺升級 */
         .header-flex-box {
             display: flex;
             align-items: center; 
@@ -186,17 +184,9 @@
             box-shadow: inset 0 2px 4px rgba(0,0,0,0.02);
         }
 
-        .description-scroll-box::-webkit-scrollbar {
-            width: 5px;
-        }
-        .description-scroll-box::-webkit-scrollbar-track {
-            background: #e2e8f0;
-            border-radius: 4px;
-        }
-        .description-scroll-box::-webkit-scrollbar-thumb {
-            background: var(--uci-blue);
-            border-radius: 4px;
-        }
+        .description-scroll-box::-webkit-scrollbar { width: 5px; }
+        .description-scroll-box::-webkit-scrollbar-track { background: #e2e8f0; border-radius: 4px; }
+        .description-scroll-box::-webkit-scrollbar-thumb { background: var(--uci-blue); border-radius: 4px; }
 
         p.paragraph-desc {
             font-size: 13.5px;
@@ -208,9 +198,7 @@
             word-break: break-word;
         }
 
-        p.paragraph-desc:last-child {
-            margin-bottom: 0;
-        }
+        p.paragraph-desc:last-child { margin-bottom: 0; }
 
         .light-en-text {
             font-size: 11px;
@@ -245,7 +233,6 @@
             white-space: nowrap;
         }
 
-        /* 🔒 核心表格三大邊框防線：外框與內部單元格強制以 #1b3d6d 實體深藍顯影 */
         .table-container {
             width: 100%;
             margin-top: 8px;
@@ -407,7 +394,6 @@
             filter: drop-shadow(0 5px 10px rgba(0,0,0,0.2));
         }
 
-        /* 🖨️ 列印專用防護罩：A4 尺寸精準鎖定 */
         @media print {
             body { background-color: #fff; padding: 0; margin: 0; }
             .ad-container { max-width: 100%; width: 100%; box-shadow: none; border-radius: 0; }
@@ -619,7 +605,6 @@
                         </tr>
                         <tr>
                             <td style="font-weight: bold;">⏰ 上課時間 | Class Time</td>
-                            <!-- 🎯 Aegis 核心 UI 規範 3：幾何 100% 精準居中 -->
                             <td style="text-align: center; vertical-align: middle;">
                                 <div style="display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding: 2px 0;">
                                     <div style="font-weight:800; color:var(--uci-blue); font-size:13px; line-height:1.2;">
@@ -670,7 +655,8 @@
 
         <div class="last-page-footer-box">
             <div class="join-us-btn-container">
-                <img src="Advcnce.png" alt="開啟巴比美語進階卓越之門" class="cta-join-us-img" onclick="openDualLinks(event)">
+                <!-- 🎯 圖片名稱與精準 URL 對齊修正區 -->
+                <img src="Advancejoinnow.png" alt="開啟巴比美語進階卓越之門" class="cta-join-us-img" onclick="openDualLinks(event)">
             </div>
             <div class="footer-image-box" style="margin-top: 0; width: 100%; margin-left: 0; justify-content: center;">
                 <img src="Advancekids.png" alt="巴比美語學員快樂探究合照" class="page-footer-img">
@@ -680,24 +666,20 @@
 
 </div>
 
-<!-- 📡 Aegis 修正版：完美破解 Safari/Chrome 防彈窗阻斷機制 -->
+<!-- 📡 Aegis 100% 雙開破解腳本：契合 GitHub 實體發布檔名 -->
 <script>
 function openDualLinks(event) {
     if (event) event.preventDefault();
     
-    // 🎯 Aegis 核心對齊：精準對應 GitHub Standard 命名
-    var mainLink = "https://bobbyenglishschool.github.io/2026BobbyEnglish-Advance-C1.html";
-    var contractLink = "https://bobbyenglishschool.github.io/2026BobbyEnglish-Contract-Advance-C1.html";
+    // 🎯 精準對齊 GitHub Pages 實體發布檔名
+    var formUrl = "https://bobbyenglishschool.github.io/2026BobbyEnglish-Advance-adv_c1.html";
+    var contractUrl = "https://bobbyenglishschool.github.io/2026BobbyEnglish-Contract-AdvanceC1.html";
     
-    // 🎯 核心修正：取消原本傳遞缺陷！在使用者真實點擊當下，同步發射兩個視窗！
-    var w1 = window.open(mainLink, "_blank");
-    var w2 = window.open(contractLink, "_blank");
+    // 1. 在新分頁開啟契約書（使用 1 次 window.open，手機 Safari 100% 放行）
+    window.open(contractUrl, "_blank");
     
-    // 🛡️ 防彈備援機制：如果第二個視窗被手機強硬阻斷，自動進行溫馨指引
-    if (!w2 || w2.closed || typeof w2.closed === 'undefined') {
-        console.warn("Contract popup blocked by mobile safety shield. Fallback engaged.");
-        alert("✨ 巴比美語溫馨提示：系統已為您開啟 Advance C1 報名表！若定型化契約未自動彈出，請於報名頁面點擊上方「契約審閱連結」即可查看喔！");
-    }
+    // 2. 將廣告本頁直接順暢切換為報名表（非彈窗，100% 成功不被攔截）
+    window.location.href = formUrl;
 }
 </script>
 </body>
